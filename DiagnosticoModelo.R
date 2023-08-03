@@ -41,6 +41,8 @@ traceplot(stan.fit, par = "lp__", colour="black") +
   ylab("Log-verosimilitud posterior") +
   xlab("iteraciones")
 # Gráfico del coeficiente de variación de las estimaciones
+# Debe revisar el dataframe est para establecer el rango, en 
+# mi caso el rango es 1:414.
 est <- summary(stan.fit)$summary
 se_mean <- as.vector(est[1:414,2])
 mean <- abs(as.vector(est[1:414,1]))
